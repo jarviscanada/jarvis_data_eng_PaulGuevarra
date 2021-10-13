@@ -43,7 +43,7 @@ if [ $container_status -eq 1 ]; then
 
 fi
 
-#starts or stops the container
+#command to start or stop the container
 docker container $cmd jrvs-psql
 exit $?
 ;;
