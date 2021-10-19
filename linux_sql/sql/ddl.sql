@@ -1,6 +1,6 @@
 
 --Creates host_info table
-CREATE TABLE PUBLIC.host_info
+CREATE TABLE IF NOT EXISTS PUBLIC.host_info
   (
 		 id               SERIAL NOT NULL,
 		 hostname         VARCHAR UNIQUE NOT NULL,
@@ -16,18 +16,17 @@ CREATE TABLE PUBLIC.host_info
   );
 
 --Creates host_usage table
-CREATE TABLE PUBLIC.host_usage
+CREATE TABLE IF NOT EXISTS PUBLIC.host_usage
   (
    		 "timestamp"    TIMESTAMP NOT NULL,
-     		host_id        SERIAL NOT NULL ,
+     		host_id        SERIAL NOT NULL,
 		memory_free     INTEGER NOT NULL,
 		cpu_idle        INTEGER NOT NULL,
 		cpu_kernel      INTEGER NOT NULL,
 		disk_io         INTEGER NOT NULL,
 		disk_available  INTEGER NOT NULL,
-		CONSTRAINT fk_id
-		FOREIGN KEY(host_id)
-		REFERENCES host_info(id)
+		FOREIGN KEY(host_id) REFERENCES host_info(id)
+
 
   );
 
