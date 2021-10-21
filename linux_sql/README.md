@@ -42,9 +42,11 @@ This project, Linux Cluster Monitoring Agent (LCMA), was created as a tool for t
 8. Create the crontab by using this command.
   
 ```Crontab -e```
+
 9. Once in the crontab editor, enter the following cron job. Run the crontab to monitor and update the host_usage table every minute.
 
 ```* * * * * bash ~/linux_sql/host_agent/scripts/host_usage.sh localhost 5432 host_agent postgres password > /tmp/host_usage.log```
+
 10. To test the database with different queries, use queries.sql.
 
 ```psql -h localhost -U postgres -d host_agent -f sql/queries.sql```
