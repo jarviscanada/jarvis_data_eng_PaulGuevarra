@@ -123,10 +123,13 @@ The host_agent database consists of two tables, host_info and host_usage. The ho
 | cpu_kernel     | INTEGER   | NOT NULL        | CPU kernel run time (%)            |
 | disk_io        | INTEGER   | NOT NULL        | Number of disk I/O                 |
 | disk_available | INTEGER   | NOT NULL        | Total available disk space (mB)    |
+
 ##Test
 The LCMA was tested on CentOS Virtual Machine on the Google Cloud Platform using an SSH connection. The scripts were tested with both invalid number of arguments and the with necessary number of arguments on the command line. The data was observed using an SQL Client Software Application, DBeaver, and tested using multiple SQL queries. The results of the tests were as expected.
+
 ##Deployment
 The LCMA used Docker as a container to manage the Postgres database instance and the crontab in order to execute the script periodically. The source code was managed using git and was pushed to GitHub using the GitFlow model, developing several feature branches.
+
 ##Improvements
 - Write more queries to test and analyze the data for more failures and resource planning
 - Implements a feature that handles hardware specification changes and update the host_info table with the new data
