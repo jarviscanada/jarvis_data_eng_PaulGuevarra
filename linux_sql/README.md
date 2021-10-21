@@ -93,9 +93,9 @@ This Cron job runs the host_usage.sh script in order to gather the hardware usag
 - ```queries.sql```
 
 This SQL file queries the data, which is used for analyzing the data, including:
-- List of hosts and their total memory size grouped by CPU
-- List the average amount of memory used by each host in 5-minute intervals
-- Detect host failures in the localhost (Linux CentOS 7 VM)
+ - List of hosts and their total memory size grouped by CPU
+ - List the average amount of memory used by each host in 5-minute intervals
+ - Detect host failures in the localhost (Linux CentOS 7 VM)
 
 
 ```psql -h localhost -U postgres -d host_agent -f sql/queries.sql```
