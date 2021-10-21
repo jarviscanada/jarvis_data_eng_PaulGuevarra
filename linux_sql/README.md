@@ -1,4 +1,4 @@
-#Linux Cluster Monitoring Agent
+# Linux Cluster Monitoring Agent
 
 
 ##Introduction
@@ -14,7 +14,7 @@ This project, Linux Cluster Monitoring Agent (LCMA), was created as a tool for t
 -	Crontab
 -	DBeaver
 
-##Quick Start
+## Quick Start
 1. Create a docker container to store and run the database psql_docker.sh script.
 
 ```./scripts/psql_docker.sh create [db_username][db_password]```
@@ -49,11 +49,13 @@ This project, Linux Cluster Monitoring Agent (LCMA), was created as a tool for t
 
 ```psql -h localhost -U postgres -d host_agent -f sql/queries.sql```
 
-##Implementation
+## Implementation
 In order to implement the LCMA, a docker container must be used in order to contain the PSQL database for the data to be stored. Each node contains a bash script that retrieves the hardware specification and usage data. A crontab was implemented to run the hardware usage script periodically on each node. A few queries were created in order to retrieve and test out the data from the database.
-##Architecture
+
+## Architecture
 ![Architecture](./assets/Architecture_Diagram_for_Linux.jpg)
-##Scripts
+
+## Scripts
 - ```psql_docker.sh```
     
 This script creates, starts, or stop a docker container that contains the PSQL database.
@@ -96,7 +98,7 @@ This SQL file queries the data, which is used for analyzing the data, including:
 
 ```psql -h localhost -U postgres -d host_agent -f sql/queries.sql```
 
-##Database Modeling
+## Database Modeling
 The host_agent database consists of two tables, host_info and host_usage. The host_info table stores the hardware specifications and the host_usage table contains the hardware usage data.
 
 - host_info TABLE
@@ -124,13 +126,13 @@ The host_agent database consists of two tables, host_info and host_usage. The ho
 | disk_io        | INTEGER   | NOT NULL        | Number of disk I/O                 |
 | disk_available | INTEGER   | NOT NULL        | Total available disk space (mB)    |
 
-##Test
+## Test
 The LCMA was tested on CentOS Virtual Machine on the Google Cloud Platform using an SSH connection. The scripts were tested with both invalid number of arguments and the with necessary number of arguments on the command line. The data was observed using an SQL Client Software Application, DBeaver, and tested using multiple SQL queries. The results of the tests were as expected.
 
-##Deployment
+## Deployment
 The LCMA used Docker as a container to manage the Postgres database instance and the crontab in order to execute the script periodically. The source code was managed using git and was pushed to GitHub using the GitFlow model, developing several feature branches.
 
-##Improvements
+## Improvements
 - Write more queries to test and analyze the data for more failures and resource planning
 - Implements a feature that handles hardware specification changes and update the host_info table with the new data
 - Remove unnecessary or unused data (remove nodes and data not in use)
