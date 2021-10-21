@@ -122,7 +122,7 @@ The host_agent database consists of two tables, host_info and host_usage. The ho
 |----------------|-----------|-----------------|------------------------------------|
 | timestamp      | TIMESTAMP | NOT NULL        | Time of data entry                 |
 | host_id        | SERIAL    | FOREIGN KEY     | References id from host_info Table |
-| memory_free    | INTEGER   | NOT NULL UNIQUE | Total node's unused memory (mB)    |
+| memory_free    | INTEGER   | NOT NULL        | Total node's unused memory (mB)    |
 | cpu_idle       | INTEGER   | NOT NULL        | CPU processor idle time (%)        |
 | cpu_kernel     | INTEGER   | NOT NULL        | CPU kernel run time (%)            |
 | disk_io        | INTEGER   | NOT NULL        | Number of disk I/O                 |
