@@ -2,7 +2,7 @@
 
 
 ##Introduction
-This project, Linux Cluster Monitoring Agent (LCMA), was created as a tool for the LCA team to manage and monitor clusters of nodes/servers running CentOS. 7 (Linux). These nodes are connected through a switch that can communicate with one another using the nodes internal IPv4 address. The LCMA records each node's hardware specifications and usage both statically and dynamically (real-time) using scripts. The data is then collected and stored into a RDBMS (Postgres Docker Database) managed by a node/server to analyze the data, check for hardware failures, and plan future resource management. A crontab was implemented in order add new data entry is added to the host usage table every minute. The database is then tested with SQL queries using the DBeaver application. The technologies used to build the LCMA includes:
+This project, Linux Cluster Monitoring Agent (LCMA), was created as a tool for the LCA team to manage and monitor clusters of nodes/servers running CentOS. 7 (Linux). These nodes are connected through a switch that can communicate with one another using the nodes internal IPv4 address. The LCMA records each node\'s hardware specifications and usage both statically and dynamically (real-time) using scripts. The data is then collected and stored into a RDBMS (Postgres Docker Database) managed by a node/server to analyze the data, check for hardware failures, and plan future resource management. A crontab was implemented in order add new data entry is added to the host usage table every minute. The database is then tested with SQL queries using the DBeaver application. The technologies used to build the LCMA includes:
 -	Linux
 -	CentOS
 -	Docker
