@@ -19,7 +19,7 @@ create)
 #check if container is already created
 if [ $container_status -eq 0 ]; then
 	echo 'Container already exists'
-	exit 1
+	exit 0
 fi
 
 #check the number of CLI arguements
