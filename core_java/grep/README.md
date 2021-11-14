@@ -36,7 +36,7 @@ writeToFile(matchedLines)
 If the file size is larger than the heap of the JVM, the application outputs an OutOfMemoryError exception. The implemented List data structure can get too large and hinder performance if the file contain to many lines to parse through. Using the Stream APIs implementation, rather than using BufferedReader and Lists, to process data would solve this issue. Since streams do not store data and allow for elements to be computer on the demand, this allows memory to be saved in larger sizes. 
 #Test
 The Grep Application was tested by inputting sample data into the arguments of the program. The sample data was input manually on the command line, using different combinations of regex string patterns, root directory paths, and out filenames. The output file is then compared to the output using the Linux grep command. If there are any discrepancies that could be determined, they would be debugged and fixed.
-#Deployment
+# Deployment
 The Java Grep Application was first turned into a jar file and then turned into a docker image by implementing a DockerFile. The docker image was then uploaded to the Docker hub to be accessed on https://hub.docker.com/repository/docker/paulguevarra/grep. The Docker Image can be also be pulled using the command `docker pull paulguevarra/grep`.
 
 # Improvement
