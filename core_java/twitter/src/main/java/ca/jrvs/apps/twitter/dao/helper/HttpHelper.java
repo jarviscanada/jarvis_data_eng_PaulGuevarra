@@ -1,6 +1,9 @@
 package ca.jrvs.apps.twitter.dao.helper;
 
+import java.io.IOException;
 import java.net.URI;
+
+import oauth.signpost.exception.OAuthException;
 import org.apache.http.HttpResponse;
 import org.apache.http.entity.StringEntity;
 
