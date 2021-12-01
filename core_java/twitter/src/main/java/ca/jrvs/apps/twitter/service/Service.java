@@ -1,6 +1,9 @@
 package ca.jrvs.apps.twitter.service;
 
 import ca.jrvs.apps.twitter.model.Tweet;
+import oauth.signpost.exception.OAuthException;
+
+import java.io.IOException;
 import java.util.List;
 
 public interface Service {
@@ -13,7 +16,7 @@ public interface Service {
      *
      * @throws IllegalArgumentException if text exceed max number of allowed characters or lat/long out of range
      */
-    Tweet postTweet(Tweet tweet);
+    Tweet postTweet(Tweet tweet) throws OAuthException, IOException;
 
 
     /**
