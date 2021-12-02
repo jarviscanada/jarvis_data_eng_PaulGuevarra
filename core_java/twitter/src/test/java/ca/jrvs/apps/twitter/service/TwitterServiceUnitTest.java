@@ -2,6 +2,7 @@ package ca.jrvs.apps.twitter.service;
 
 import ca.jrvs.apps.twitter.dao.CrdDao;
 import ca.jrvs.apps.twitter.model.Tweet;
+import ca.jrvs.apps.twitter.util.JsonUtil;
 import ca.jrvs.apps.twitter.util.TweetUtil;
 import oauth.signpost.exception.OAuthException;
 import org.junit.Before;
@@ -16,6 +17,8 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.doReturn;
 
 @RunWith(MockitoJUnitRunner.class)
 public class TwitterServiceUnitTest {
@@ -28,7 +31,7 @@ public class TwitterServiceUnitTest {
     String hashTag = "#tacotuesday";
     float lon = 10f;
     float lat = -10f;
-    String text = "@paulwguevarra guess what day it is? It really really is "+ hashTag + " " + System.currentTimeMillis();
+    String text ="test with loc223";
     String tweetJsonStr = "{\n"
             + "   \"created_at\":\"Mon Feb 18 21:24:39 +0000 2019\",\n"
             + "   \"id\":1097607853932564480,\n"
@@ -49,6 +52,7 @@ public class TwitterServiceUnitTest {
     public void setUp() throws Exception{
         service = new TwitterService(dao);
     }
+
     @Test
     public void postTweet() throws OAuthException, IOException {
 
@@ -99,16 +103,17 @@ public class TwitterServiceUnitTest {
             assertEquals("Coordinates are out of range.", e.getMessage());
         }
 
-        Tweet postTweet = TweetUtil.buildTweet(text,lon,lat);
+        Tweet expectedTweet = JsonUtil.toObjectFromJson(tweetJsonStr, Tweet.class);
+        doReturn(expectedTweet).when(dao).create(any());
+        Tweet postTweet = TweetUtil.buildTweet("test with loc223",lon,lat);
         Tweet validTweet = service.postTweet(postTweet);
 
-        assertEquals(text, validTweet.getText());
-        assertEquals(lon, validTweet.getCoordinates().getCoordinates()[0], 1e-8);
-        assertEquals(lat, validTweet.getCoordinates().getCoordinates()[1], 1e-8);
+        assertEquals("test with loc223", validTweet.getText());
+        assertEquals(null, validTweet.getCoordinates());
     }
 
     @Test
-    public void showTweet() {
+    public void showTweet() throws IOException {
         String id = "1465757997402107906";
         String invalidId = "ABC123";
         String[] validFields = {
@@ -145,34 +150,35 @@ public class TwitterServiceUnitTest {
             //ID must be all numerical characters.
             assertEquals("Invalid or Missing Field(s): Create Identification IdentificationString Ent ",e.getMessage());
         }
+        Tweet expectedTweet = JsonUtil.toObjectFromJson(tweetJsonStr, Tweet.class);
+        doReturn(expectedTweet).when(dao).findById(any());
         Tweet tweet = service.showTweet(id, validFields);
 
-        assertEquals("@paulwguevarra guess what day it is? It really really is #tacotuesday 1638298912615", tweet.getText());
-        assertEquals(lon, tweet.getCoordinates().getCoordinates()[0], 1e-8);
-        assertEquals(lat, tweet.getCoordinates().getCoordinates()[1], 1e-8);
+        assertEquals("test with loc223", tweet.getText());
+        assertEquals(null,tweet.getCoordinates());
     }
 
     @Test
     public void deleteTweets() throws OAuthException, IOException {
         String [] invalidIds = {"ABC", "DEF", "GHI"};
-
+        String text = "test with loc223";
+        String text2 = "@tos test5 ";
         try{
             service.deleteTweets(invalidIds);
         }catch (IllegalArgumentException e){
             assertEquals("ID must be all numerical characters.", e.getMessage());
         }
 
-        Tweet tweet1 = service.postTweet(TweetUtil.buildTweet(text, lon, lat));
-        Tweet tweet2 = service.postTweet(TweetUtil.buildTweet(text + " COPY",lon, lat));
+        Tweet expectedTweet = JsonUtil.toObjectFromJson(tweetJsonStr, Tweet.class);
+        doReturn(expectedTweet).when(dao).deleteById(any());
 
-        String [] validIds = {tweet1.getId_str(),tweet2.getId_str()};
+        String [] validIds = {"1445454948389429253", "1445455964530823179"};
         List<Tweet> deletedTweets = service.deleteTweets(validIds);
 
         for(Tweet tweet : deletedTweets)
         {
-            assertTrue(text.equals(tweet.getText()) || (text +" COPY").equals(tweet.getText()));
-            assertEquals(lon, tweet.getCoordinates().getCoordinates()[0], 1e-8);
-            assertEquals(lat, tweet.getCoordinates().getCoordinates()[1],1e-8);
+            assertTrue(text.equals(tweet.getText()) || text2.equals(tweet.getText()));
+            assertEquals(null, tweet.getCoordinates());
         }
     }
 }
