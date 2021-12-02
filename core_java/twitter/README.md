@@ -74,7 +74,7 @@ The Twitter CRUD Application uses a simplified version of the complete Tweet Mod
 
 ![ER_diagram](./assets/ER_diagram.png)
 
-#Spring
+# Spring
 The Spring framework was used in order to handle all the dependencies in the Twitter CRUD Application. Beans were implemented in the TwitterCLISpringBoot class and were indicated throughout the application using `@Component`, `@Repository`, `@Controller`, `@Service`. The TwitterCLIComponentScan class, a replication of the `@ComponentScan` Spring function, was used to scan the beans. 
 # Test
 The Twitter CRUD Application was tested using Integration and Unit testing from JUnit 4. The Integration tests require the dependencies to be correct and complete before testing, to confirm that the previous written programs are correct before testing the current program. Unit testing uses Mockito to create mock objects instead of using dependencies. This allows the testing of individual components during the development of that application, rather than relying on other previous written programs. 
