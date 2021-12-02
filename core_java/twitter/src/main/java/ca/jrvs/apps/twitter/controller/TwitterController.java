@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 
 import static ca.jrvs.apps.twitter.util.TweetUtil.buildTweet;
 
+@org.springframework.stereotype.Controller
 public class TwitterController implements Controller{
 
     private static final String COORD_SEP = ":";

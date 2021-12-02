@@ -5,16 +5,16 @@ import ca.jrvs.apps.twitter.example.JsonParser;
 import ca.jrvs.apps.twitter.model.Tweet;
 import ca.jrvs.apps.twitter.util.JsonUtil;
 import com.google.gdata.util.common.base.PercentEscaper;
-import com.sun.org.slf4j.internal.Logger;
-import com.sun.org.slf4j.internal.LoggerFactory;
 import oauth.signpost.exception.OAuthException;
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.io.*;
 import java.net.*;
 
+@Repository
 public class TwitterDao implements CrdDao<Tweet, String>{
 
     //URI constants
@@ -30,7 +30,7 @@ public class TwitterDao implements CrdDao<Tweet, String>{
     //Response code
     private static final int HTTP_OK = 200;
     private HttpHelper httpHelper;
-    public static final Logger logger = LoggerFactory.getLogger(TwitterDao.class);
+
     @Autowired
     public TwitterDao(HttpHelper httpHelper){this.httpHelper = httpHelper;}
 

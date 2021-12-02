@@ -75,7 +75,8 @@ public class TwitterControllerUnitTest {
             assertEquals("Invalid location format\nUSAGE: TwitterCLIApp post \"tweet_text\" \"latitude:longitude\"",e.getMessage());
         }
 
-        String[] validArgs = {"post", text+System.currentTimeMillis(), "10:10"};
+        String newText = text + System.currentTimeMillis();
+        String[] validArgs = {"post", "@paulwguevarra guess what day it is? It really really is #tacotuesday", "10:10"};
 
         float lon = 10f;
         float lat = 10f;
