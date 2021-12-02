@@ -68,7 +68,7 @@ The service layer performs the business logic of the application. It ensures tha
 The DAO layer handles the HTTP requests and responses, and sends and retrieves information to and from the Twitter Website. This layer uses the TwitterHttpHelper and URI statements in order to execute `POST` and `GET` requests. 
 ## Models
 
-###Tweet
+### Tweet
 
 The Twitter CRUD Application uses a simplified version of the complete Tweet Model. The simplified version excludes attributes that are not needed for the Application to run. The Tweet object consist of attributes, and other objects including Coordinates, Entities, Hashtag, and UserMention.
 
