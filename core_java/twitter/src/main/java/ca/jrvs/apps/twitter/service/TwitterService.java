@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@org.springframework.stereotype.Service
 public class TwitterService implements Service{
     private CrdDao dao;
 

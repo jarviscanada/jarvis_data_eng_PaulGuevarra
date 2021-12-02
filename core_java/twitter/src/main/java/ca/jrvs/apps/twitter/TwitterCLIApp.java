@@ -12,12 +12,13 @@ import ca.jrvs.apps.twitter.util.JsonUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import oauth.signpost.exception.OAuthException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-
+@Component
 public class TwitterCLIApp {
 private Controller controller;
 
@@ -26,7 +27,7 @@ private Controller controller;
     this.controller = controller;
 }
 
-public static void main(String[]args) throws OAuthException, IOException {
+    public static void main(String[]args) throws OAuthException, IOException {
     String consumerKey = System.getenv("consumerKey");
     String consumerSecret = System.getenv("consumerSecret");
     String accessToken = System.getenv("accessToken");
@@ -37,7 +38,7 @@ public static void main(String[]args) throws OAuthException, IOException {
     app.run(args);
 }
 
-    private void run(String[] args) throws OAuthException, IOException {
+    public void run(String[] args) throws OAuthException, IOException {
 
     if(args.length==0)
     {
