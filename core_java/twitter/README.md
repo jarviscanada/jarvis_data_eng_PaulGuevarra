@@ -1,5 +1,5 @@
 # Introduction
-The twitter CRUD Application is a Java application that allows the user to post, retrieve, and delete Tweets on a Twitter Developer Account. This is accomplished using the official Twitter REST APIs. The application's design is based on the MVC architecture, consisting of a controller layer, service layer, data access object layer (DAO), and a model. The application is then tested using Junit, Mockito, and Integrated tests. The application was then packaed and dockerized and was uploaded as an image on the DockerHub. The technologies used in the application include:
+The twitter CRUD Application is a Java application that allows the user to post, retrieve, and delete Tweets on a Twitter Developer Account. This is accomplished using the official Twitter REST APIs. The application's design is based on the MVC architecture, consisting of a controller layer, service layer, data access object layer (DAO), and a model. The application is then tested using Junit, Mockito, and Integrated tests. The application was then packaged and dockerized and was uploaded as an image on the DockerHub. The technologies used in the application include:
 
 - Java
 - Maven
