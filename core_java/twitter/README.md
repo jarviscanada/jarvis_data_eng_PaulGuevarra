@@ -16,7 +16,7 @@ These environment variables must be exported and must be retrieved from a Twitte
 - **accessToken**: Access Token
 - **tokenSecret**: Access Secret
 
-####Usage
+#### Usage
 
 **POST**
 - Allows the user to post a tweet with a location using geotag
