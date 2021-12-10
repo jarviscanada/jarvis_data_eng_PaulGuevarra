@@ -19,8 +19,9 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_PaulGuevar
 
 **Core Java Apps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PaulGuevarra/tree/master/core_java)]:
       
-  - JDBC App: Implemented a Java Database Connectivity (JDBC) application, that is used to create and establish a connection to a PostgreSQL database. The application allows the client to perform predefined operations such as CRUD (Create, Read, Update, Delete), against the database. The application was implemented using Java, JDBC, Maven, PostgreSQL, and docker. 
-  - Grep App: Designed a Java Application that replicates the Linux grep command, searching files in a directory, matching strings within the files (using regex), and output matches in another file. The application was implemented with Java 8's Lambda and Stream APIs, Maven, and containerized using docker. 
+  - Twitter App: The twitter CRUD Application is a Java application that allows the user to post, retrieve, and delete Tweets on a Twitter Developer Account. This is accomplished using the official Twitter REST APIs. The application's design is based on the MVC architecture, consisting of a controller layer, service layer, data access object layer (DAO), and a model. The application was implemented using Java, Maven, Twitter REST APIs, HTTP & JSON, JUnit and Mockito, Spring, and Docker.
+  - JDBC App: Implemented a Java Database Connectivity (JDBC) application, that is used to create and establish a connection to a PostgreSQL database. The application allows the client to perform predefined operations such as CRUD (Create, Read, Update, Delete), against the database. The application was implemented using Java, JDBC, Maven, PostgreSQL, and Docker. 
+  - Grep App: Designed a Java Application that replicates the Linux grep command, searching files in a directory, matching strings within the files (using regex), and output matches in another file. The application was implemented with Java 8's Lambda and Stream APIs, Maven, and containerized using Docker. 
 
 
 ## Highlighted Projects
