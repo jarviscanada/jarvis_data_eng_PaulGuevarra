@@ -1,9 +1,9 @@
 --SQL QUERIES
 --1. Query to group hosts by CPU number and sort by memory size in descending order
-select cpu_number, id, total_mem
-from  host_info
-group by cpu_number, id
-order by total_mem desc;
+SELECT cpu_number, id, total_mem
+FROM  host_info
+GROUP BY cpu_number, id
+ORDER BY total_mem desc;
 
 
 --2.a) Function to get round every timestamp to the nearest 5 minute interval
@@ -19,17 +19,17 @@ $$
 
 SELECT u.host_id, round5(u.timestamp)as rts, AVG((i.total_mem/1000)-memory_free)::int as memory_used
 FROM host_usage u
-inner join host_info i
-on u.host_id =i.id
-group by u.host_id,rts
-order by rts;
+INNER JOIN host_info i
+ON u.host_id =i.id
+GROUP BY u.host_id,rts
+ORDER BY rts;
 
 --3.Query to detect all host failures (cron job should enter a new entry every minute)
 
 SELECT u.host_id, round5(u.timestamp)as ts, count(round5(u.timestamp)) as num_data_points
 FROM host_usage u
-inner join host_info i
-on u.host_id =i.id
-group by u.host_id,ts
-having count(round5(u.timestamp))<5
-order by ts;
+INNER JOIN host_info i
+ON u.host_id =i.id
+GROUP BY u.host_id,ts
+HAVING COUNT(round5(u.timestamp))<5
+ORDER BY ts;
