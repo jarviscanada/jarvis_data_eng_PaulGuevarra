@@ -1,6 +1,6 @@
 # Paul Guevarra . Jarvis Consulting
 
-I am a recent graduate from Ryerson University with a Bachelor of Science (Honours) in Computer Science. During my time at Ryerson, I had the opportunity to study database systems, machine learning, and software engineering and strengthen my Programming Fundamentals. I am currently a Data Engineer at Jarvis Consulting Group working on several projects such as Linux Cluster Usage Administration, Java Grep, JDBC, and Java Twitter Applications. During my time at Jarvis, I have developed my skill sets while following agile software development practices and implementing different technologies (Psql, Docker, Maven, etc.) I am a fast learner and a team player who is seeking new challenges and opportunities to contribute to a team as a Data Engineer.
+I am a recent graduate from Ryerson University with a Bachelor of Science (Honours) in Computer Science. During my time at Ryerson, I had the opportunity to study database systems, machine learning, and software engineering and strengthen my Programming Fundamentals. I am currently a Software Engineer at Jarvis Consulting Group, working on several projects such as Linux Cluster Usage Administration, Java Grep, JDBC, and Java Twitter Applications. During my time at Jarvis, I have developed my skill sets while following agile software development practices and implementing different technologies (Psql, Docker, Maven, etc.) I am a fast learner and a team player seeking new challenges and opportunities to contribute to a team as a Data Engineer.
 
 ## Skills
 
