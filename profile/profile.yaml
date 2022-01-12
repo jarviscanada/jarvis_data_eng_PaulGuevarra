@@ -17,13 +17,14 @@ skills:
     - RDBMS/SQL
     - Agile/Scrum
     - Git
+    - Docker
   # At least 5 skills
   competent:
-    - Docker
     - Linux/Bash
     - JUnit
     - Maven
     - MongoDB
+    - SpringBoot
   # At least 5 skills
   familiar:
     - HTML/CSS
