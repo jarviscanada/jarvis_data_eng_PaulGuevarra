@@ -4,9 +4,9 @@ I am a recent graduate from Ryerson University with a Bachelor of Science (Honou
 
 ## Skills
 
-**Proficient:** Java, Python, RDBMS/SQL, Agile/Scrum, Git
+**Proficient:** Java, Python, RDBMS/SQL, Agile/Scrum, Git, Docker
 
-**Competent:** Docker, Linux/Bash, JUnit, Maven, MongoDB
+**Competent:** Linux/Bash, JUnit, Maven, MongoDB, SpringBoot
 
 **Familiar:** HTML/CSS, C/C++, Javascript, Hadoop, HTTP/JSON
 
